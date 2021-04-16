@@ -13,6 +13,19 @@ function [compass, accel, gyro, temp, baro] = Read_VN200_IMU(s)
 %
 % Author: S. Bruder
 
+% % Trying something out
+% 
+% persistent n
+% if (isempty(n))
+%     n = 1;
+% end
+% 
+% compass = zeros(3,1);
+% accel = zeros(3,1);
+% gyro = zeros(3,1);
+% temp = zeros(1,1);
+% baro = zeros(1,1);
+
 if s.NumBytesAvailable > 400
     error(' Your sample rate is too high - Please lower Fs !!');
 end
@@ -25,6 +38,9 @@ resp = char(readline(s));           % Read the IMU data from the serial port as 
 % The last two bytes are a checksum
 
 imu_data = sscanf(resp(8:end-3), '%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f');
+
+% fprintf('n = %d:  imu_data size %d \n', n, length(imu_data))
+% n = n + 1;
 
 % Save data as column vectors
 compass= imu_data(1:3);     % X, Y, Z Compass data (Gauss)
