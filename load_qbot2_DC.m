@@ -6,7 +6,7 @@ clc
 
 %**************************************************************************
 % Set Desired (Max) Run Time
-D.t_end = 4;
+D.t_end = 11;
 D.Fs = 50;
 D.dt = 1 / D.Fs;
 
@@ -15,6 +15,17 @@ D.dt = 1 / D.Fs;
 D.diameter = 0.35; % m
 D.radius = D.diameter / 2;
 
+%**************************************************************************
+% Test Distances
+m2ft = 3.28084;
+test_dist_m = 0.5 : 0.1 : 2.6;
+test_dist_ft = test_dist_m * m2ft;
+test_dist_ft_in = [floor(test_dist_ft); (test_dist_ft - floor(test_dist_ft))*12];
+n = 1 : length(test_dist_ft);
+test = [n', test_dist_m', test_dist_ft_in'];
+disp(test)
+
+% clear m2ft test_dist_m test_dist_ft test_dist_ft_in n test
 %**************************************************************************
 % To use Pre-Built Motion Profile or Keyboard Motor Controls
 % You MUST comment/uncomment to corresponding subsystems in Simulink!

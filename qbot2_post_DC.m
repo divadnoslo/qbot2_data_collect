@@ -5,71 +5,6 @@
 
 if (D.plot_collected_data == true)
     
-    % Accel Data Plot
-    figure
-    subplot(3,1,1)
-    plot(t, accel(:,1), 'r')
-    title('Accel X-Axis')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('m/s^2')
-    grid on
-    subplot(3,1,2)
-    plot(t, accel(:,2), 'g')
-    title('Accel Y-Axis')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('m/s^2')
-    grid on
-    subplot(3,1,3)
-    plot(t, accel(:,3), 'b')
-    title('Accel Z-Axis')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('m/s^2')
-    grid on
-    
-    % Gyro Data Plot
-    figure
-    subplot(3,1,1)
-    plot(t, gyro(:,1) * 180/pi, 'r')
-    title('Gyro X-Axis')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('deg/s')
-    grid on
-    subplot(3,1,2)
-    plot(t, gyro(:,2) * 180/pi, 'g')
-    title('Gyro Y-Axis')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('deg/s')
-    grid on
-    subplot(3,1,3)
-    plot(t, gyro(:,3) * 180/pi, 'b')
-    title('Gyro Z-Axis')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('deg/s')
-    grid on
-    
-    % Encoder Plots
-    figure
-    subplot(2,1,1)
-    plot(t, odo(:,1), 'g')
-    title('Left Wheel Position')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('m')
-    grid on
-    subplot(2,1,2)
-    plot(t, odo(:,2), 'r')
-    title('Right Wheel Position')
-    xlabel('Time (s)')
-    xlim([0 D.t_end])
-    ylabel('m')
-    grid on
-    
     % Show Last Depth Camera Image Taken
     xyz = depth2xyz(depth);
     figure
@@ -103,7 +38,7 @@ if (D.save_data(1) == 'y' || D.save_data(1) == 'Y')
     disp('Example File Name:  <your_name_here>.mat')
     D.file_name = input('Desired File Name:  ', 's');
     D.file = [D.file_name, '.mat'];
-    save(D.file, 't', 'odo', 'accel', 'gyro', 'depth')
+    save(D.file, 'depth')
     
 end
 
