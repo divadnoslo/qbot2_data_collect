@@ -71,7 +71,8 @@ if (D.plot_collected_data == true)
     grid on
     
     % Show Last Depth Camera Image Taken
-    xyz = depth2xyz(depth);
+    [end_frame, ~] = size(depth);
+    xyz = depth2xyz(depth, end_frame, 'high');
     figure
     hold on
     plot3(xyz(1,:), xyz(2,:), xyz(3,:), 'b.')
