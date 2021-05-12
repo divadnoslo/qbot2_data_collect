@@ -6,8 +6,8 @@ clc
 
 %**************************************************************************
 % Set Desired (Max) Run Time
-D.t_end = 10;
-t_end = 10;
+D.t_end = 30;
+t_end = D.t_end;
 D.Fs = 50;
 D.dt = 1 / D.Fs;
 
