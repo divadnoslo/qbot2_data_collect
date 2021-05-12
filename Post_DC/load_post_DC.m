@@ -15,7 +15,11 @@ P.odo = odo;
 P.depth = depth;
 
 % Load Tranfer Alignment Calibrations
-load('Trans_Cal.mat')
+load('Trans_Align.mat')
+P.C_b__imu = C_b__imu;
+
+% Load Calibration
+load("IMU1_Cal.mat")
 P.b_a_FB = b_a_FB;
 P.b_g_FB = b_g_FB;
 P.M_a = M_a;

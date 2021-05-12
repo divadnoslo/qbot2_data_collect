@@ -2,8 +2,8 @@
 % David Olson
 
 %% Plot Flags
-plot_imu_raw = false;
-plot_imu_meas = false;
+plot_imu_raw = true;
+plot_imu_meas = true;
 plot_PVA_meas = true;
 
 %% Plot PVA Meas
