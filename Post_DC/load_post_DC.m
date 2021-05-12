@@ -7,7 +7,7 @@ clear all
 clc
 
 % Load Data Desired for Run
-load('dummy.mat')
+load('test_trans_align.mat')
 P.t = t;
 P.accel = accel;
 P.gyro = gyro;
