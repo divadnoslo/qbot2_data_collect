@@ -1,4 +1,4 @@
-function [xyz] = depth2xyz(depthData)
+function [xyz_new] = depth2xyz(depthData)
 
 % Determine the last frame
 [frame, ~] = size(depthData);
@@ -57,8 +57,8 @@ xyz = [(x_all ./ 1000); (y_all ./ 1000); (z_all ./ 1000)];
 ii = 1;
 for k = 1 : length(xyz)
     if (norm(xyz(:,k)) >= 0.1)
-        % xyz(:,ii) = rotate_y(21.5 * pi/180)*xyz(:,k);
-        xyz(:,ii) = xyz(:,ii) + [0; 0; 0.25];
+        xyz_new(:,ii) = rotate_y(21.5 * pi/180) * xyz(:,k);
+        xyz_new(:,ii) = xyz(:,ii) + [0; 0; 0.25];
         ii = ii + 1;
     end
 end
