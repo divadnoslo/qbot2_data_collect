@@ -70,8 +70,8 @@ xyz = [(x_all ./ 1000); (y_all ./ 1000); (z_all ./ 1000)];
 ii = 1;
 for k = 1 : length(xyz)
     if (norm(xyz(:,k)) >= 0.4)
-        %xyz(:,ii) = rotate_y(21.5 * pi/180)*xyz(:,k) + [0; 0; 0.25];
-        xyz_new(:,ii) = xyz(:,k);
+        xyz_new(:,ii) = rotate_y(21.5 * pi/180)*xyz(:,k) + [0; 0; 0.25];
+%         xyz_new(:,ii) = xyz(:,k);
         ii = ii + 1;
     end
 end

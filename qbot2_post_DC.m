@@ -104,7 +104,9 @@ if (D.save_data(1) == 'y' || D.save_data(1) == 'Y')
     disp('Example File Name:  <your_name_here>.mat')
     D.file_name = input('Desired File Name:  ', 's');
     D.file = [D.file_name, '.mat'];
+    D.file_backup = [D.file_name, '_backup.mat'];
     save(D.file, 't', 'odo', 'accel', 'gyro', 'depth')
+    save(D.file_backup, 'accel_scope', 'gyro_scope', 'odo_scope')
     
 end
 

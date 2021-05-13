@@ -4,9 +4,11 @@ close all
 clear all
 clc
 
+addpath('Nav_Functions')
+
 %**************************************************************************
 % Set Desired (Max) Run Time
-D.t_end = 30;
+D.t_end = 90;
 t_end = D.t_end;
 D.Fs = 50;
 D.dt = 1 / D.Fs;
@@ -30,8 +32,8 @@ if (D.use_motion_profile == true)
     fprintf('Pre-Built Motion Profile Enabled...  \n')
 else
     fprintf('Keyboard Motor Controls Enabled...   \n')
-    D.v_cmds = [];
-    D.v_w = zeros(2, length(0 : D.dt : D.t_end));
+%     D.v_cmds = [];
+%     D.v_w = zeros(2, length(0 : D.dt : D.t_end));
 end
 
 disp('Press the "Monitor & Tune" button in the Simulink Hardware Tab to Begin')
