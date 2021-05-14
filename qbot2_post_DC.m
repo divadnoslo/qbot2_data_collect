@@ -106,7 +106,7 @@ if (D.save_data(1) == 'y' || D.save_data(1) == 'Y')
     D.file = [D.file_name, '.mat'];
     D.file_backup = [D.file_name, '_backup.mat'];
     save(D.file, 't', 'odo', 'accel', 'gyro', 'depth')
-    save(D.file_backup, 'accel_scope', 'gyro_scope', 'odo_scope')
+%     save(D.file_backup, 'accel_scope', 'gyro_scope', 'odo_scope')
     
 end
 

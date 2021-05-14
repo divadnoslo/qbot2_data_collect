@@ -8,7 +8,7 @@ addpath('Nav_Functions')
 
 %**************************************************************************
 % Set Desired (Max) Run Time
-D.t_end = 90;
+D.t_end = 10 * 60;
 t_end = D.t_end;
 D.Fs = 50;
 D.dt = 1 / D.Fs;
