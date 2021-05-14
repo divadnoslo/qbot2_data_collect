@@ -4,9 +4,11 @@ close all
 clear all
 clc
 
+addpath('Nav_Functions');
+
 %**************************************************************************
 % Set Desired (Max) Run Time
-D.t_end = inf;
+D.t_end = 10 * 60;
 D.Fs = 50;
 D.dt = 1 / D.Fs;
 
